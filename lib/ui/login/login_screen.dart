@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:multi_purpose_app/routes/routes.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
 import 'package:multi_purpose_app/utils/styles.dart';
@@ -23,7 +24,6 @@ class LoginScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
           child: Form(
             key: _formKey,
-            autovalidateMode: AutovalidateMode.always,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -47,6 +47,7 @@ class LoginScreen extends StatelessWidget {
                   style: Styles.instance.text14White,
                   textInputAction: TextInputAction.next,
                   validator: EmailFieldValidator.validate,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: 16.h,
@@ -65,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                     builder: (context, value, child) => TextFormField(
                       obscureText: _obscurePasswordText.value,
                       textInputAction: TextInputAction.done,
+                      keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
                         filled: true,
                         border: Styles.instance.outlineBorder,
@@ -99,6 +101,7 @@ class LoginScreen extends StatelessWidget {
                     if (_formKey.currentState!.validate()) {
                       // navigate to home page
                       debugPrint('navigate to home page');
+                      Navigator.pushReplacementNamed(context, Routes.navbar);
                     }
                   },
                   child: Text(

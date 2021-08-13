@@ -12,18 +12,18 @@ class Styles {
 
   Styles._internal();
 
-  InputBorder get outlineBorder => OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(6.r)),
-        borderSide: BorderSide(color: AppColors.black65, width: 1.w),
-      );
+  final outlineBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(6.r)),
+    borderSide: BorderSide(color: AppColors.black65, width: 1.w),
+  );
 
-  TextStyle get text16BoldWhite => GoogleFonts.lato(
-        fontSize: 16.sp,
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-      );
-  TextStyle get text14White => GoogleFonts.lato(
-        fontSize: 14.sp,
-        color: Colors.white,
-      );
+  final text16BoldWhite = GoogleFonts.lato(
+    fontSize: 16.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
+  final text14White = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: Colors.white,
+  );
 }
