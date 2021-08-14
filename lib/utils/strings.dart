@@ -22,5 +22,18 @@ class Strings {
   final albums = 'Albums';
   final todoList = 'To Do List';
   final profile = 'Profile';
-  final viewComments = 'view comments';
+  final viewComments = 'View Comments';
+  final userProfile = 'User Profile';
+  final basicInfo = 'Basic Information';
+  final name = 'Name';
+  final emailAddress = 'Email Address';
+  final phoneNo = 'Phone no.';
+  final website = 'Website';
+  final company = 'Company';
+  final addressInfo = 'Address Information';
+  final street = 'Street';
+  final suite = 'Suite';
+  final city = 'City';
+  final zipcode = 'Zipcode';
+  final logout = 'Log out';
 }

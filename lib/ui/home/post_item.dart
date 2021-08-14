@@ -40,7 +40,7 @@ class PostItem extends StatelessWidget {
                   arguments: post.id);
             },
             child: Text(
-              Strings.instance.viewComments,
+              Strings.instance.viewComments.toLowerCase(),
               style: Styles.instance.text14ExtraBoldWhite,
             ),
           ),

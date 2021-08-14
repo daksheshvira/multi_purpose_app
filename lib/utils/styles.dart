@@ -49,4 +49,13 @@ class Styles {
     fontSize: 14.sp,
     color: AppColors.gray147,
   );
+
+  final text14GrayLight = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: AppColors.gray147,
+    fontWeight: FontWeight.w300,
+  );
+
+  final text32ExtraBoldWhite = GoogleFonts.lato(
+      fontSize: 28.sp, color: Colors.white, fontWeight: FontWeight.w800);
 }

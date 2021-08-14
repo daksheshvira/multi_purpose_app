@@ -15,4 +15,5 @@ class Images {
   final logoWhite = 'assets/images/logo_white.svg';
   final message = 'assets/images/message.svg';
   final profile = 'assets/images/profile.svg';
+  final person = 'assets/images/person.jpg';
 }

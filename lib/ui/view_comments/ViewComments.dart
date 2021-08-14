@@ -22,7 +22,7 @@ class _ViewCommentsState extends State<ViewComments> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          Strings.instance.viewComments.toUpperCase(),
+          Strings.instance.viewComments,
           style: Styles.instance.text18ExtraBoldWhite,
         ),
         leading: IconButton(

@@ -9,8 +9,8 @@ import 'package:multi_purpose_app/utils/validators.dart';
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final ValueNotifier<bool> _obscurePasswordText = ValueNotifier(true);
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController(text: 'dakshvira@gmail.com');
+  final _passwordController = TextEditingController(text: 'AdmiN@123');
 
   @override
   Widget build(BuildContext context) {
