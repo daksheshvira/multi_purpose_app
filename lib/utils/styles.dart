@@ -22,8 +22,25 @@ class Styles {
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
+
   final text14White = GoogleFonts.lato(
     fontSize: 14.sp,
     color: Colors.white,
+  );
+
+  final text24White = GoogleFonts.lato(
+    fontSize: 24.sp,
+    color: Colors.white,
+  );
+
+  final text14ExtraBoldWhite = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.w800,
+  );
+  final text18ExtraBoldWhite = GoogleFonts.lato(
+    fontSize: 18.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.w800,
   );
 }

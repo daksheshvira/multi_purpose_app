@@ -61,10 +61,10 @@ class LoginScreen extends StatelessWidget {
                   height: 8.h,
                 ),
                 Builder(
-                  builder: (context) => ValueListenableBuilder(
+                  builder: (context) => ValueListenableBuilder<bool>(
                     valueListenable: _obscurePasswordText,
                     builder: (context, value, child) => TextFormField(
-                      obscureText: _obscurePasswordText.value,
+                      obscureText: value,
                       textInputAction: TextInputAction.done,
                       keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
@@ -76,9 +76,7 @@ class LoginScreen extends StatelessWidget {
                         errorMaxLines: 3,
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _obscurePasswordText.value
-                                ? Icons.visibility_off
-                                : Icons.visibility,
+                            value ? Icons.visibility_off : Icons.visibility,
                             color: Colors.white70,
                           ),
                           onPressed: () {
@@ -101,12 +99,12 @@ class LoginScreen extends StatelessWidget {
                     if (_formKey.currentState!.validate()) {
                       // navigate to home page
                       debugPrint('navigate to home page');
-                      Navigator.pushReplacementNamed(context, Routes.navbar);
+                      Navigator.pushNamed(context, Routes.navbar);
                     }
                   },
                   child: Text(
                     Strings.instance.continueText,
-                    style: Styles.instance.text14White,
+                    style: Styles.instance.text16BoldWhite,
                   ),
                   style: ElevatedButton.styleFrom(
                     primary: AppColors.success,
@@ -114,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(24.r),
                     ),
                     padding: EdgeInsets.symmetric(
-                      vertical: 12.h,
+                      vertical: 16.h,
                       horizontal: 16.w,
                     ),
                   ),
