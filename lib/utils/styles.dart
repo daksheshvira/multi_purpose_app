@@ -57,5 +57,20 @@ class Styles {
   );
 
   final text32ExtraBoldWhite = GoogleFonts.lato(
-      fontSize: 28.sp, color: Colors.white, fontWeight: FontWeight.w800);
+    fontSize: 28.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.w800,
+  );
+
+  final text14SemiBoldSuccess = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: AppColors.success,
+    fontWeight: FontWeight.w500,
+  );
+
+  final text14SemiBoldError = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: AppColors.error,
+    fontWeight: FontWeight.w500,
+  );
 }

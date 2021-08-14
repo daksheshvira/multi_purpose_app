@@ -13,7 +13,8 @@ class PageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 24.h),
+      padding:
+          EdgeInsets.only(right: 16.w, left: 16.w, bottom: 24.h, top: 32.h),
       color: AppColors.black25,
       child: SafeArea(
         child: Column(

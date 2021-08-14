@@ -5,6 +5,7 @@ import 'package:multi_purpose_app/routes/routes.dart';
 import 'package:multi_purpose_app/ui/albums/albums_screen.dart';
 import 'package:multi_purpose_app/ui/home/home_screen.dart';
 import 'package:multi_purpose_app/ui/profile/profile_screen.dart';
+import 'package:multi_purpose_app/ui/todo/todo_list_screen.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
 import 'package:multi_purpose_app/utils/images.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
@@ -20,7 +21,7 @@ class _NavbarState extends State<Navbar> {
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     AlbumsScreen(),
-    Container(),
+    TodoListScreen(),
     ProfileScreen(),
   ];
 
