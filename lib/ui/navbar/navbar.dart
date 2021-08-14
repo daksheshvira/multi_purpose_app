@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multi_purpose_app/routes/routes.dart';
+import 'package:multi_purpose_app/ui/albums/albums_screen.dart';
 import 'package:multi_purpose_app/ui/home/home_screen.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
 import 'package:multi_purpose_app/utils/images.dart';
+import 'package:multi_purpose_app/utils/strings.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Container(),
+    AlbumsScreen(),
     Container(),
     Container(),
   ];
@@ -35,31 +37,34 @@ class _NavbarState extends State<Navbar> {
               width: 16.w,
               color: _selectedIndex == 0 ? Colors.white : AppColors.gray147,
             ),
-            label: 'Home',
+            label: Strings.instance.home,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               Images.instance.heart,
               height: 16.h,
               width: 16.w,
+              color: _selectedIndex == 1 ? Colors.white : AppColors.gray147,
             ),
-            label: 'Albums',
+            label: Strings.instance.albums,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               Images.instance.message,
               height: 16.h,
               width: 16.w,
+              color: _selectedIndex == 2 ? Colors.white : AppColors.gray147,
             ),
-            label: 'To Do List',
+            label: Strings.instance.todoList,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               Images.instance.profile,
               height: 16.h,
               width: 16.w,
+              color: _selectedIndex == 3 ? Colors.white : AppColors.gray147,
             ),
-            label: 'Profile',
+            label: Strings.instance.profile,
           ),
         ],
         currentIndex: _selectedIndex,

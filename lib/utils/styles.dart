@@ -38,9 +38,15 @@ class Styles {
     color: Colors.white,
     fontWeight: FontWeight.w800,
   );
+
   final text18ExtraBoldWhite = GoogleFonts.lato(
     fontSize: 18.sp,
     color: Colors.white,
     fontWeight: FontWeight.w800,
+  );
+
+  final text14Gray = GoogleFonts.lato(
+    fontSize: 14.sp,
+    color: AppColors.gray147,
   );
 }

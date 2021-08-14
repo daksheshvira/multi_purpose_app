@@ -13,9 +13,14 @@ class Strings {
   final continueText = 'Continue';
   final posts = 'Posts';
   final loremIpsum =
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and';
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
   final title = 'Title';
   final post = 'Post';
   final createPost = 'Create Post';
   final submitPost = 'Submit Post';
+  final home = 'Home';
+  final albums = 'Albums';
+  final todoList = 'To Do List';
+  final profile = 'Profile';
+  final viewComments = 'view comments';
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:multi_purpose_app/data/models/post.dart';
+import 'package:multi_purpose_app/routes/routes.dart';
+import 'package:multi_purpose_app/utils/strings.dart';
 import 'package:multi_purpose_app/utils/styles.dart';
 
 class PostItem extends StatelessWidget {
@@ -33,9 +35,12 @@ class PostItem extends StatelessWidget {
             height: 8.h,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, Routes.viewComments,
+                  arguments: post.id);
+            },
             child: Text(
-              'view comments',
+              Strings.instance.viewComments,
               style: Styles.instance.text14ExtraBoldWhite,
             ),
           ),

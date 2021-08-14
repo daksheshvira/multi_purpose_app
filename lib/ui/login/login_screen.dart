@@ -9,6 +9,8 @@ import 'package:multi_purpose_app/utils/validators.dart';
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final ValueNotifier<bool> _obscurePasswordText = ValueNotifier(true);
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class LoginScreen extends StatelessWidget {
                   height: 8.h,
                 ),
                 TextFormField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     filled: true,
                     border: Styles.instance.outlineBorder,
@@ -64,6 +67,7 @@ class LoginScreen extends StatelessWidget {
                   builder: (context) => ValueListenableBuilder<bool>(
                     valueListenable: _obscurePasswordText,
                     builder: (context, value, child) => TextFormField(
+                      controller: _passwordController,
                       obscureText: value,
                       textInputAction: TextInputAction.done,
                       keyboardType: TextInputType.visiblePassword,
