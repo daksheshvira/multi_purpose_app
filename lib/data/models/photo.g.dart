@@ -6,8 +6,8 @@ part of 'photo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Photos _$PhotosFromJson(Map<String, dynamic> json) {
-  return Photos(
+Photo _$PhotoFromJson(Map<String, dynamic> json) {
+  return Photo(
     json['albumId'] as int,
     json['id'] as int,
     json['title'] as String,
@@ -16,7 +16,7 @@ Photos _$PhotosFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$PhotosToJson(Photos instance) => <String, dynamic>{
+Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
       'albumId': instance.albumId,
       'id': instance.id,
       'title': instance.title,
