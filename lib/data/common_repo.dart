@@ -5,6 +5,7 @@ import 'package:multi_purpose_app/data/models/album.dart';
 import 'package:multi_purpose_app/data/models/comment.dart';
 import 'package:multi_purpose_app/data/models/photo.dart';
 import 'package:multi_purpose_app/data/models/post.dart';
+import 'package:multi_purpose_app/data/models/todo.dart';
 import 'package:multi_purpose_app/services/http_service.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
 
@@ -73,6 +74,21 @@ class CommonRepo {
 
       return response
           .map((e) => Photo.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } on SocketException {
+      throw Exception(Strings.instance.noInternet);
+    } catch (e) {
+      debugPrint(e.toString());
+      return [];
+    }
+  }
+
+  Future<List<Todo>> getTodoList() async {
+    try {
+      var response = await _httpService.makeGetRequest(baseUrl + todos) as List;
+
+      return response
+          .map((e) => Todo.fromJson(e as Map<String, dynamic>))
           .toList();
     } on SocketException {
       throw Exception(Strings.instance.noInternet);

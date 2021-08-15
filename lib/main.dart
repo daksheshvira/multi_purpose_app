@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:multi_purpose_app/providers/album_notifier.dart';
 import 'package:multi_purpose_app/providers/home_provider.dart';
+import 'package:multi_purpose_app/providers/todo_notifier.dart';
 import 'package:multi_purpose_app/routes/routes.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => HomeProvider()),
           ChangeNotifierProvider(create: (_) => AlbumNotifier()),
+          ChangeNotifierProvider(create: (_) => TodoNotifier()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
