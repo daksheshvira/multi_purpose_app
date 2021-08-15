@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:multi_purpose_app/routes/routes.dart';
 import 'package:multi_purpose_app/ui/profile/info_item.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
+import 'package:multi_purpose_app/utils/app_env.dart';
 import 'package:multi_purpose_app/utils/images.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
 import 'package:multi_purpose_app/utils/styles.dart';
@@ -28,7 +30,10 @@ class ProfileScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 16.w),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                AppEnv.instance.user = null;
+                Navigator.pushReplacementNamed(context, Routes.login);
+              },
               child: Text(
                 Strings.instance.logout.toUpperCase(),
                 style: Styles.instance.text14GrayLight,

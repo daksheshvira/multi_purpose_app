@@ -40,4 +40,5 @@ class Strings {
   final somethingWrong = 'Something went wrong';
   final serverError = 'Server Error';
   final notFound = 'Not Found';
+  final userNotFound = 'User Not Found';
 }

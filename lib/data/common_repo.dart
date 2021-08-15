@@ -6,6 +6,7 @@ import 'package:multi_purpose_app/data/models/comment.dart';
 import 'package:multi_purpose_app/data/models/photo.dart';
 import 'package:multi_purpose_app/data/models/post.dart';
 import 'package:multi_purpose_app/data/models/todo.dart';
+import 'package:multi_purpose_app/data/models/user.dart';
 import 'package:multi_purpose_app/services/http_service.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
 
@@ -17,6 +18,7 @@ class CommonRepo {
   String albums = 'albums';
   String todos = 'todos';
   String photos = 'photos';
+  String users = 'users';
 
   final _httpService = HttpService();
 
@@ -95,6 +97,22 @@ class CommonRepo {
     } catch (e) {
       debugPrint(e.toString());
       return [];
+    }
+  }
+
+  Future<User?> validateUser(String email) async {
+    try {
+      var response = await _httpService.makeGetRequest(
+          baseUrl + users, '?email=$email') as List;
+      if (response.isNotEmpty) {
+        return User.fromJson(response[0] as Map<String, dynamic>);
+      } else {
+        throw Exception(Strings.instance.userNotFound);
+      }
+    } on SocketException {
+      throw Exception(Strings.instance.noInternet);
+    } catch (e) {
+      rethrow;
     }
   }
 }

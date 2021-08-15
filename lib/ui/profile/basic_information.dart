@@ -17,14 +17,23 @@ class _BasicInformation extends StatelessWidget {
           SizedBox(
             height: 8.h,
           ),
-          InfoItem(label: Strings.instance.name, value: 'Dakshesh Vira'),
+          InfoItem(
+            label: Strings.instance.name,
+            value: AppEnv.instance.user?.name ?? '',
+          ),
           InfoItem(
               label: Strings.instance.emailAddress,
-              value: 'dakshvira@gmail.com'),
-          InfoItem(label: Strings.instance.password, value: 'Daksh@123'),
-          InfoItem(label: Strings.instance.phoneNo, value: '9737227231'),
-          InfoItem(label: Strings.instance.website, value: 'dakshesh.dev'),
-          InfoItem(label: Strings.instance.company, value: 'Vira'),
+              value: AppEnv.instance.user?.email ?? ''),
+          InfoItem(label: Strings.instance.password, value: 'radoa'),
+          InfoItem(
+              label: Strings.instance.phoneNo,
+              value: AppEnv.instance.user?.phone ?? ''),
+          InfoItem(
+              label: Strings.instance.website,
+              value: AppEnv.instance.user?.website ?? ''),
+          InfoItem(
+              label: Strings.instance.company,
+              value: AppEnv.instance.user?.company.name ?? ''),
         ],
       ),
     );

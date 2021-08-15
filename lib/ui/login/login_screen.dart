@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:multi_purpose_app/providers/user_notifier.dart';
 import 'package:multi_purpose_app/routes/routes.dart';
 import 'package:multi_purpose_app/utils/app_colors.dart';
 import 'package:multi_purpose_app/utils/strings.dart';
 import 'package:multi_purpose_app/utils/styles.dart';
 import 'package:multi_purpose_app/utils/validators.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -98,12 +100,27 @@ class LoginScreen extends StatelessWidget {
                   height: 48.h,
                 ),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     _formKey.currentState!.save();
                     if (_formKey.currentState!.validate()) {
-                      // navigate to home page
-                      debugPrint('navigate to home page');
-                      Navigator.pushNamed(context, Routes.navbar);
+                      var message = await context
+                          .read<UserNotifier>()
+                          .validateUser(_emailController.text);
+                      debugPrint('login message : ' + message);
+                      if (message.isEmpty) {
+                        debugPrint('navigate to home page');
+                        Navigator.pushReplacementNamed(context, Routes.navbar);
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              message,
+                              style: Styles.instance.text14White,
+                            ),
+                            backgroundColor: AppColors.black65,
+                          ),
+                        );
+                      }
                     }
                   },
                   child: Text(

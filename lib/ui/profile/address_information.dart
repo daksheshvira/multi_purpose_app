@@ -17,10 +17,18 @@ class _AddressInformation extends StatelessWidget {
           SizedBox(
             height: 8.h,
           ),
-          InfoItem(label: Strings.instance.street, value: 'Kulas Light'),
-          InfoItem(label: Strings.instance.suite, value: 'Apt. 545'),
-          InfoItem(label: Strings.instance.city, value: 'Bhuj'),
-          InfoItem(label: Strings.instance.zipcode, value: '370001'),
+          InfoItem(
+              label: Strings.instance.street,
+              value: AppEnv.instance.user?.address.street ?? ''),
+          InfoItem(
+              label: Strings.instance.suite,
+              value: AppEnv.instance.user?.address.suite ?? ''),
+          InfoItem(
+              label: Strings.instance.city,
+              value: AppEnv.instance.user?.address.city ?? ''),
+          InfoItem(
+              label: Strings.instance.zipcode,
+              value: AppEnv.instance.user?.address.zipcode ?? ''),
         ],
       ),
     );
