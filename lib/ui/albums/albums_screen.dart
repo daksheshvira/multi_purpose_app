@@ -34,8 +34,9 @@ class AlbumsScreen extends StatelessWidget {
                   context,
                   Routes.albumDetail,
                   arguments: Album(
-                    name: 'Island in the sun',
-                    id: 'id',
+                    1,
+                    1,
+                    'Island in the sun',
                   ),
                 );
               },

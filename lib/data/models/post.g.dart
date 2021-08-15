@@ -8,14 +8,16 @@ part of 'post.dart';
 
 Post _$PostFromJson(Map<String, dynamic> json) {
   return Post(
-    title: json['title'] as String,
-    subTitle: json['subTitle'] as String,
-    id: json['id'] as String,
+    json['userId'] as int,
+    json['id'] as int,
+    json['title'] as String,
+    json['body'] as String,
   );
 }
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
-      'title': instance.title,
-      'subTitle': instance.subTitle,
+      'userId': instance.userId,
       'id': instance.id,
+      'title': instance.title,
+      'body': instance.body,
     };

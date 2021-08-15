@@ -59,7 +59,7 @@ class Routes {
           );
         }
       case Routes.viewComments:
-        if (args is String) {
+        if (args is int) {
           return MaterialPageRoute(
             builder: (_) => ViewComments(
               postId: args,

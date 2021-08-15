@@ -28,7 +28,7 @@ class PostItem extends StatelessWidget {
             height: 4.h,
           ),
           Text(
-            post.subTitle,
+            post.body,
             style: Styles.instance.text14White,
           ),
           SizedBox(

@@ -23,7 +23,7 @@ class _AlbumDetailScreenState extends State<AlbumDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.album.name,
+          widget.album.title,
           style: Styles.instance.text18ExtraBoldWhite,
         ),
         leading: IconButton(

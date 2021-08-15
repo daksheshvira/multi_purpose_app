@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:multi_purpose_app/utils/strings.dart';
 import 'package:multi_purpose_app/utils/styles.dart';
 
 class CommentItem extends StatelessWidget {
@@ -20,19 +19,24 @@ class CommentItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Dakshesh Vira',
-                style: Styles.instance.text16BoldWhite,
+              Expanded(
+                child: Text(
+                  name,
+                  style: Styles.instance.text16BoldWhite,
+                ),
               ),
               SizedBox(
                 width: 16.w,
               ),
               Expanded(
                 child: Text(
-                  'dakshvira@gmail.com',
+                  email,
                   style: Styles.instance.text14Gray,
                   textAlign: TextAlign.start,
                 ),
@@ -43,10 +47,10 @@ class CommentItem extends StatelessWidget {
             height: 8.w,
           ),
           Text(
-            Strings.instance.loremIpsum,
+            comment,
             style: Styles.instance.text14White,
             textAlign: TextAlign.start,
-          )
+          ),
         ],
       ),
     );

@@ -19,10 +19,11 @@ class TodoListScreen extends StatelessWidget {
         Flexible(
           child: ListView.builder(
             itemBuilder: (context, index) => TodoItem(
-              toDo: ToDo(
-                status: 'Completed',
-                name: 'Draft Post',
-                id: 'id',
+              todo: Todo(
+                1,
+                1,
+                'title',
+                true,
               ),
             ),
             itemCount: 10,

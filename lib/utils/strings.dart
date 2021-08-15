@@ -36,4 +36,8 @@ class Strings {
   final city = 'City';
   final zipcode = 'Zipcode';
   final logout = 'Log out';
+  final noInternet = 'No internet connection found';
+  final somethingWrong = 'Something went wrong';
+  final serverError = 'Server Error';
+  final notFound = 'Not Found';
 }
